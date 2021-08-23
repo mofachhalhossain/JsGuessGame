@@ -29,7 +29,7 @@ html{
     margin-top: 3rem;
 }
 
-.button_slide {
+ .button_slide {
     color: black;
     border: 2px solid rgb(2, 166, 216);
     border-radius: 0px;
@@ -42,8 +42,93 @@ html{
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
-  }
+ }
 
-  .slide_left:hover {
+ .slide_left:hover {
     box-shadow: inset 0 0 0 50px #3abaf5;
-  }
+ }
+
+
+ .main-container {
+     width: 100vw;
+     min-height: 100vh;
+     display: grid;
+     place-items: center;
+     background-color:rgba(189, 232, 252, 0.993);
+ }
+
+ .inner-container{
+     width: 50vw;
+     background-color: white;
+     padding: 3rem 6rem;
+     border-radius: 1rem;
+     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
+ }
+
+ .inner-container h2{
+     font-size: 34px;
+     font-weight: normal;
+     margin-top: 1rem;
+ }
+
+ .inner-container li{
+     position: inherit;
+     font-size: 1rem;
+     margin-top: 1.2rem;
+     list-style: none;
+ }
+
+ input{
+     cursor: pointer;
+ }
+
+ #submit, .btn{
+     padding: 1rem 1rem;
+     outline: none;
+     font-size: 1rem;
+     display: inline-block;
+     margin: 1.5rem 0 0 18rem;
+     background-color:#fcd6b6;
+     border-radius: 20%;
+ }
+
+ #submit:hover{
+     background-color:#f7aa86;
+     color:aliceblue;
+     border-radius: 40%;
+ }
+
+ #previous, .btn{
+    padding: 1rem 1rem;
+    outline: none;
+    font-size: 1rem;
+    display:block;
+    margin: -47px 0 0 0;
+    background-color:white;
+    border-radius: 20%;
+}
+
+#previous:hover{
+    background-color:black;
+    color:aliceblue;
+    border-radius: 40%;
+}
+
+ #showResult{
+     background-color:gainsboro;
+     margin-top: 3rem;
+     padding: 3rem 4rem;
+     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+ }
+
+ .resultArea{
+     display: none;
+ }
+
+ .img-container{
+     justify-content: space-between;
+     padding: 1rem 1rem;
+     margin: 10px 10px;
+     max-width: 60vw;
+     max-height: 80vh;
+ }
