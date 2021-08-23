@@ -153,12 +153,13 @@ a:active {
      display: none;
  }
 
- .img-container{
-     justify-content: space-between;
+ .img{
+     justify-content: center;
+     text-align: center;
      padding: 1rem 1rem;
      margin: 10px 10px;
-     max-width: 60vw;
-     max-height: 80vh;
+     max-width: 560px;
+     max-height: 480px;
  }
 
  #showResult h3 {

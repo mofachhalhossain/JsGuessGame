@@ -2,6 +2,7 @@
 const gameDB = [
     {
         question: "What is the name of this bird",
+        img : "img/Bird.jpg",
         a: "Woodpecker",
         b: "Guinea Fowl",
         c: "Spoonbill",
@@ -11,6 +12,7 @@ const gameDB = [
 
     {
         question: "What is the name of this fish",
+        img : "img/fish.JPG",
         a: "Wels Catfish",
         b: "Common Carp",
         c: "European Seabass",
@@ -20,6 +22,7 @@ const gameDB = [
 
     {
         question: "What is the name of this flower",
+        img : "img/Flower.jpg",
         a: "Billbergia",
         b: "Echium",
         c: "Blanket Flower",
@@ -29,6 +32,7 @@ const gameDB = [
 
     {
         question: "What is the name of this insect",
+        img : "img/Insect.jpg",
         a: "Termite",
         b: "Wasps",
         c: "Ladybug",
@@ -38,6 +42,7 @@ const gameDB = [
 
     {
         question: "What is the name of this pet",
+        img : "img/Pet.jpg",
         a: "Capybaras",
         b: "Prairie dogs",
         c: "Genets",
@@ -47,6 +52,7 @@ const gameDB = [
 
     {
         question: "What is the name of this reptile",
+        img : "img/Reptile.jpg",
         a: "Spider",
         b: "Bearded Dragon",
         c: "Platypus",
@@ -56,6 +62,7 @@ const gameDB = [
 
     {
         question: "What is the name of this sea-creature",
+        img : "img/Sea_Creature.jpg",
         a: "Blackdragon Fish",
         b: "Ghost Fish",
         c: "Eerie Anglerfish",
@@ -65,6 +72,7 @@ const gameDB = [
 
     {
         question: "What is the name of this tree",
+        img : "img/Tree.JPG",
         a: "Eucalyptus",
         b: "Banyan Tree",
         c: "Aloe Vera Tree",
@@ -74,12 +82,14 @@ const gameDB = [
 
     {
         question: "What is the name of this wild animal",
+        img : "img/Wild_Animal.JPG",
         a: "Hippopotamus",
         b: "Mole",
         c: "Reindeer",
         d: "Panda",
         ans: "ans4"
     },
+    
 ];
 
 const question = document.querySelector('.question');
@@ -91,6 +101,7 @@ const submit = document.querySelector('#submit');
 const previous = document.querySelector('#previous');
 const answers = document.querySelectorAll('.answer');
 const showResult = document.querySelector('#showResult');
+const img = document.querySelector('.img');
 
 let questionIncrement = 0;
 let score = 0;
@@ -99,7 +110,7 @@ const loadQuestion = () =>{
     const questionList = gameDB[questionIncrement];
 
     question.innerHTML = questionList.question;
-
+    img.innerHTML = "<img src="+ questionList.img +">";
     option1.innerHTML = questionList.a;
     option2.innerHTML = questionList.b;
     option3.innerHTML = questionList.c;
