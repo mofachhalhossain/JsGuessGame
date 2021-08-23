@@ -6,7 +6,7 @@ const gameDB = [
         b: "Guinea Fowl",
         c: "Spoonbill",
         d: "Columbidae",
-        ans: "ans1",
+        ans: "ans1"
     },
 
     {
@@ -15,7 +15,7 @@ const gameDB = [
         b: "Common Carp",
         c: "European Seabass",
         d: "Sword Fish",
-        ans: "ans4",
+        ans: "ans4"
     },
 
     {
@@ -24,7 +24,7 @@ const gameDB = [
         b: "Echium",
         c: "Blanket Flower",
         d: "Lantana",
-        ans: "ans3",
+        ans: "ans3"
     },
 
     {
@@ -33,7 +33,7 @@ const gameDB = [
         b: "Wasps",
         c: "Ladybug",
         d: "Booklice",
-        ans: "ans3",
+        ans: "ans3"
     },
 
     {
@@ -42,7 +42,7 @@ const gameDB = [
         b: "Prairie dogs",
         c: "Genets",
         d: "Axolotls",
-        ans: "ans2",
+        ans: "ans2"
     },
 
     {
@@ -51,7 +51,7 @@ const gameDB = [
         b: "Bearded Dragon",
         c: "Platypus",
         d: "None of them",
-        ans: "ans2",
+        ans: "ans2"
     },
 
     {
@@ -60,7 +60,7 @@ const gameDB = [
         b: "Ghost Fish",
         c: "Eerie Anglerfish",
         d: "Giant Isopod",
-        ans: "ans1",
+        ans: "ans1"
     },
 
     {
@@ -69,7 +69,7 @@ const gameDB = [
         b: "Banyan Tree",
         c: "Aloe Vera Tree",
         d: "Sal Tree",
-        ans: "ans2",
+        ans: "ans2"
     },
 
     {
@@ -78,6 +78,71 @@ const gameDB = [
         b: "Mole",
         c: "Reindeer",
         d: "Panda",
-        ans: "ans4",
+        ans: "ans4"
     },
-]
+];
+
+const question = document.querySelector('.question');
+const option1 = document.querySelector('#option1');
+const option2 = document.querySelector('#option2');
+const option3 = document.querySelector('#option3');
+const option4 = document.querySelector('#option4');
+const submit = document.querySelector('#submit');
+const previous = document.querySelector('#previous');
+const answers = document.querySelectorAll('.answer');
+const showResult = document.querySelector('#showResult');
+
+let questionIncrement = 0;
+let score = 0;
+
+const loadQuestion = () =>{
+    const questionList = gameDB[questionIncrement];
+
+    question.innerHTML = questionList.question;
+
+    option1.innerHTML = questionList.a;
+    option2.innerHTML = questionList.b;
+    option3.innerHTML = questionList.c;
+    option4.innerHTML = questionList.d;
+
+}
+loadQuestion();
+
+
+const getCheckedAnswer = () => {
+    let answer;
+
+    answers.forEach((currentAnswerElement) => {
+        if(currentAnswerElement.checked){
+            answer = currentAnswerElement.id;
+        }
+    });
+    return answer;
+};
+
+submit.addEventListener('click', () => {
+    const checkedAnswer = getCheckedAnswer();
+    console.log(checkedAnswer);
+
+    if(checkedAnswer === gameDB[questionIncrement].ans){
+        score++;
+    };
+
+    questionIncrement++;
+    if(questionIncrement < gameDB.length){
+        loadQuestion();
+    }
+    
+});
+
+previous.addEventListener('click', () => {
+
+    questionIncrement--;
+    if(questionIncrement < gameDB.length){
+        loadQuestion();
+    }
+    else{
+        return gameDB[questionIncrement == 0];
+    }
+    
+});
