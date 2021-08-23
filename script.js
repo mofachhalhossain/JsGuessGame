@@ -132,6 +132,14 @@ submit.addEventListener('click', () => {
     if(questionIncrement < gameDB.length){
         loadQuestion();
     }
+    else{
+        showResult.innerHTML = 
+        `
+        <h3>Your Score ${score}/${gameDB.length}</h3>
+        <button class="btn" onclick="location.reload()">Restart</button>
+        `;
+        showResult.classList.remove('resultArea');
+    }
     
 });
 
