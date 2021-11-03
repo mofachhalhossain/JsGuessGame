@@ -11,22 +11,4 @@ Clone the project
   git clone https://github.com/mofachhalhossain/JsGuessGame
 ```
 
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
   
